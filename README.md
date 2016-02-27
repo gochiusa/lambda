@@ -7,3 +7,4 @@ AWS lambda + API Gateway上で動く、ごちうさ関連のlambda functionた�
 baseurl: https://2ruhxlj2xj.execute-api.ap-northeast-1.amazonaws.com/prod/
 
 * GET /api/v1/words: 適当なセリフを取得できる
+* GET /api/v1/text/words: 適当なセリフのtextを取得できる

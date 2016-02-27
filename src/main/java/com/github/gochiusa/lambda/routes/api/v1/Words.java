@@ -9,7 +9,7 @@ import java.util.Random;
 public class Words {
 
     private static final Random random = new Random();
-    private static final List<String> words = Arrays.asList(
+    public static final List<String> words = Arrays.asList(
             "喫茶店... ラビットハウス...",
             "この前お客さんにココアちゃんはシスター・コンプレックスだねって言われちゃった",
             "リゼちゃん聞いてー私シスター・コンプレックスなんだって",
@@ -24,8 +24,23 @@ public class Words {
             "なんかこの子にダンディな声で拒絶されたんだけど"
     );
 
-    public String get(final Context context) {
-        return words.get(random.nextInt(words.size()));
+    public static class WordObject {
+
+        private String word;
+
+        public String getWord() {
+            return word;
+        }
+        public void setWord(String word) {
+            this.word = word;
+        }
+
+    }
+
+    public WordObject get(final Context context) {
+        WordObject obj = new WordObject();
+        obj.setWord(words.get(random.nextInt(words.size())));
+        return obj;
     }
 
 }
