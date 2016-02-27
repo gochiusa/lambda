@@ -1,4 +1,4 @@
-package com.github.gochiusa.lambda;
+package com.github.gochiusa.lambda.routes.api.v1;
 
 import com.amazonaws.services.lambda.runtime.Context;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class App {
+public class Words {
 
     private static final Random random = new Random();
     private static final List<String> words = Arrays.asList(
@@ -24,7 +24,7 @@ public class App {
             "なんかこの子にダンディな声で拒絶されたんだけど"
     );
 
-    public String handler(final Context context) {
+    public String get(final Context context) {
         return words.get(random.nextInt(words.size()));
     }
 
